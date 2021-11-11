@@ -16,7 +16,7 @@ function Detail() {
       "_blank" 
     );
   };
-  console.log("match:::", location);
+  
   return (
     <div
       style={{
@@ -44,9 +44,6 @@ function Detail() {
         >
           <Meta
             title={
-              // <a href={location?.state?.url} target="_blank">
-              //   {location?.state?.title}
-              // </a>
               <Popconfirm
                 placement="topRight"
                 title={text}

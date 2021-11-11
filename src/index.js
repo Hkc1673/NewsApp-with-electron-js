@@ -1,13 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from 'react-router-dom';
 import "./index.css";
-import App from "./App";
-import Detail from "./components/Detail"
+import Routers from "./Routers";
 import { Provider } from "react-redux";
 import { store } from "./store";
 
@@ -16,17 +10,7 @@ import reportWebVitals from "./reportWebVitals";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <Switch>
-        <Route exact path="/">
-          <App />
-        </Route>
-        <Route path="/detail/:index">
-          <Detail />
-        </Route>
-        </Switch>
-      </Router>
-      
+      <Routers />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

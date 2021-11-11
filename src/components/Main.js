@@ -1,7 +1,7 @@
-import "./App.css";
+import "./Main.css";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { apiRequest } from "./store/actions";
+import { apiRequest } from "../store/actions";
 import {
   Input,
   DatePicker,
@@ -22,11 +22,10 @@ function App() {
   const dispatch = useDispatch();
 
   const today = new Date().toISOString().slice(0, 10);
-  console.log("newDAte::", today);
 
   const [query, setQuery] = useState("tesla");
   const [from, setFrom] = useState(today);
-  const [sortBy, setSortBy] = useState("publishedAt");
+  const [sortBy, setSortBy] = useState("Select Sort By...");
   const [data, setData] = useState(null);
 
   useLayoutEffect(() => {
@@ -63,13 +62,13 @@ function App() {
 
   const menu = (
     <Menu onClick={handleMenuClick}>
+      <Menu.Item key="">Select Sort By...</Menu.Item>
       <Menu.Item key="1">publishedAt</Menu.Item>
       <Menu.Item key="2">popularity</Menu.Item>
       <Menu.Item key="3">relevancy</Menu.Item>
     </Menu>
   );
 
-  console.log("articles:", fetching);
   return (
     <div className="App">
       <h1>NEWS APP</h1>
@@ -79,7 +78,7 @@ function App() {
             <Input.Group compact>
               <Input
                 style={{ width: "50%" }}
-                defaultValue="Enter Search Text....."
+                placeholder="Enter Search Text....."
                 onChange={onChangeText}
                 allowClear
               />
