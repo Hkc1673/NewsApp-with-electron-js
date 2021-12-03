@@ -109,7 +109,7 @@ function App() {
                 <Link
                   to={{
                     pathname: `/detail/${author}`,
-                    state: { title, urlToImage, author, content, url },
+                    state: { title, urlToImage, author, description, url },
                   }}
                 >
                   <Card
@@ -138,7 +138,7 @@ function App() {
             <Spin size="large" />
           </Space>
         ) : (
-          <h3>Veri yok</h3>
+          <h3>No Data</h3>
         )}
       </div>
     </div>

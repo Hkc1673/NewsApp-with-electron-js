@@ -1,13 +1,10 @@
 {
   "name": "newsapi",
-  "description": "News app",
-  "author": {
-    "name": "Habib Koç",
-    "email": "habibkc71@gmail.com"
-  },
   "version": "0.1.0",
+  "license": "UNLICENSED",
   "private": true,
   "main": "public/electron.js",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -33,14 +30,8 @@
     "eject": "react-scripts eject",
     "dev": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm:electron\"",
     "electron": "wait-on tcp:3000 && electron .",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
-  },
-  "build": {
-    "appId": "your.id",
-    "mac": {
-      "category": "your.app.category.type"
-    }
+    "pack": "npm run build && npm run electron-build",
+    "electron-build": "electron-builder"
   },
   "eslintConfig": {
     "extends": [

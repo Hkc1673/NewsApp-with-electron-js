@@ -54,7 +54,7 @@ function Detail() {
                 <Button>{location?.state?.title}</Button>
               </Popconfirm>
             }
-            description={location?.state?.content}
+            description={location?.state?.description}
           />
         </Card>
       </div>

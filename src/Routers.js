@@ -1,12 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import "./index.css";
 import Main from "./components/Main";
 import Detail from "./components/Detail";
 
 function Routers() {
   return (
-    <Router>
+    <HashRouter>
       <Switch>
         <Route exact path="/">
           <Main />
@@ -15,7 +15,7 @@ function Routers() {
           <Detail />
         </Route>
       </Switch>
-    </Router>
+    </HashRouter>
   );
 }
 
